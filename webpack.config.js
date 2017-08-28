@@ -4,7 +4,7 @@ var htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
-    entry : './progress_bars/controller/index.js',
+    entry : './feeds/controller/index.js',
     output : {
         path:  "/dist",
         filename: "app.bundle.js"
