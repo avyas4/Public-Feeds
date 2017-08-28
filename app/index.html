@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Progress Bar</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body ng-app="myApp" ng-cloak>
+    <div ng-controller='feedsController' class="ng-cloak">
+        <div class='container'>
+            <h1>Public Feed</h1>
+
+            <div>
+                <!-- On click change "$scope.layout = list" and if layout=='list' add class 'active' to self-->
+
+                <!-- Layout=='grid' if layout parameter is grid than show this block -->
+                <div class="form-group">
+                    <div class='list-grid-view'>
+                        <a href="#" class="list-icon" ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"><i class="fa fa-list" aria-hidden="true"></i></a>
+
+                        <!-- On click change "$scope.layout = grid" and if layout=='grid' add class 'active' to self-->
+                        <a href="#" class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"><i class="fa fa-table" aria-hidden="true"></i></a>
+                    </div>
+                    <label for="usr">Search:</label>
+                    <input type="text" class="form-control serach-feed" id="usr" ng-model="searchText" placeholder="Search by ID/Title">
+                    <button type="button" ng-click="filter = searchText" ng-model='searchText' class="btn btn-success">Submit</button>
+                </div>
+                <ul ng-show="layout == 'grid'" class="grid">
+                    <li ng-repeat='feed in records | filter:searchText as filtered_result track by feed.id' data-id='{{feed.id}}'>
+
+                        <div ng-repeat='img in feed.link' ng-if='img.rel=="enclosure"'><img alt='...' src='{{img.href}}' /></div>
+                        <p class='title-feed'>{{feed.title}}</p>
+                        <p>Published: {{feed.published}}</p>
+                        <p>Updated: {{feed.updated}}</p>
+                        <li>
+                </ul>
+
+                <!-- Layout=='list' if layout parameter is list than show this block -->
+                <ul ng-show="layout == 'list'" class="list">
+                    <li ng-repeat='feed in records | filter:searchText as filtered_result track by feed.id' data-id='{{feed.id}}'>
+
+                        <div ng-repeat='img in feed.link' ng-if='img.rel=="enclosure"'><img alt='...' src='{{img.href}}' /></div>
+                        <p class='title-feed'>{{feed.title}}</p>
+                        <p>Published: {{feed.published}}</p>
+                        <p>Updated: {{feed.updated}}</p>
+                        <li>
+                </ul>
+
+
+                <div class="bs-example" ng-show="filtered_result.length==0">
+                    <div class="alert alert alert-info fade in">
+                        <strong>No Data Found</strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="feeds/controller/index.js"></script>
+    <script src="feeds/service/index.js"></script>
+
+</body>
+
+</html>

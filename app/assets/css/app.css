@@ -1,0 +1,104 @@
+ /*-------------------------
+    List layout
+--------------------------*/
+.container{
+    background-color:#ececec;;
+}
+
+ul.list{
+    list-style: none;
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+ul.list li{
+    
+    padding: 10px;
+    overflow: hidden;
+}
+
+ul.list li img{
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    float:left;
+}
+
+ul.list li p{
+    margin-left: 170px;
+    font-weight: bold;
+    color:#6e7a7f;
+    padding-left: 40px;
+}
+
+
+/*-------------------------
+    Grid layout
+--------------------------*/
+.form-group{
+    text-align: center;
+    margin: 20px;
+}
+ul li:hover
+{
+    box-shadow: 0px 0px 10px #6e7a7f;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.05);
+}
+ul.grid{
+    list-style: none;
+    width: 100%
+    margin: 0 auto;
+    text-align: left;
+
+}
+.list-grid-view a{
+color:#6e7a7f;
+}
+.list-grid-view{
+        display: inline-block;
+    float: left;
+}
+
+.list-grid-view a i{
+    color: #000;
+    font-size: 20px;
+    padding: 8px;
+}
+.list-grid-view a i:hover{
+   cursor: pointer;
+}
+.title-feed{
+    font-size: 16px;
+    height:19px;
+}
+.serach-feed{
+    display: inline-block;
+    width: 50%;
+}
+ul.grid li{
+    padding: 14px;
+    float:left;
+    height :320px;
+        margin-top: 20px;
+}
+
+ul.grid li img{
+    object-fit: cover;
+    width: 235px;
+    height: 200px;
+}
+ul.grid li p{
+    margin:10px;
+    margin-left:0px;
+    font-weight: bold;
+    color: #6e7a7f;
+    }
