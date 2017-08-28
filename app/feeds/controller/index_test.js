@@ -1,8 +1,8 @@
 describe('feedsController', function() {
-    beforeEach(module('myApp'));
+    beforeEach(angular.mock.module('myApp'));
 
     var $controller;
-    beforeEach(inject(function(_$controller_) {
+    beforeEach(angular.mock.inject(function(_$controller_) {
         // The injector unwraps the underscores (_) from around the parameter names when matching
         $controller = _$controller_;
     }));

@@ -17,8 +17,8 @@ module.exports = function(config) {
     files: [
         './app/bower_components/angular/angular.js',
     './app/bower_components/angular-mocks/angular-mocks.js',
-    './app/progress_bars/controller/index_test.js',
-    './app/progress_bars/controller/index_test_services.js'
+    './app/feeds/controller/index_test.js',
+    './app/feeds/controller/index_test_services.js'
     ],
 
 
