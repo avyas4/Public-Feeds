@@ -34,8 +34,8 @@
                         <a href="#" class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"><i class="fa fa-table" aria-hidden="true"></i></a>
                     </div>
                     <label for="usr">Search:</label>
-                    <input type="text" class="form-control serach-feed" id="usr" ng-model="searchText" placeholder="Search by ID/Title">
-                    <button type="button" ng-click="filter = searchText" ng-model='searchText' class="btn btn-success">Submit</button>
+                    <input type="text" class="form-control serach-feed" id="usr" ng-model='searchText' placeholder="Search by ID/Title">
+                  
                 </div>
                 <ul ng-show="layout == 'grid'" class="grid">
                     <li ng-repeat='feed in records | filter:searchText as filtered_result track by feed.id' data-id='{{feed.id}}'>
